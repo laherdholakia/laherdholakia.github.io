@@ -1714,7 +1714,17 @@
 		.image.fit {
 			display: block;
 			width: 100%;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.image.fit.spec {
+			display: block;
+			width: 100%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		.image.fit.spec img:hover {
+			-webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
+    		filter: blur(3px);
 		}
 
 		.image.featured {
