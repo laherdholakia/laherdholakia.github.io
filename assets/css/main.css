@@ -1,12 +1,6 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 
-/*
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 /* Reset */
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -1643,7 +1637,7 @@
 	}
 
 		a:hover {
-			color: #E27689;
+			color: #fed43e;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 
@@ -2024,7 +2018,7 @@
 		}
 
 			#header .icons a {
-				color: #41484c;
+				color: #666;
 				-moz-transition: color 0.35s ease-in-out;
 				-webkit-transition: color 0.35s ease-in-out;
 				-ms-transition: color 0.35s ease-in-out;
@@ -2032,7 +2026,7 @@
 			}
 
 				#header .icons a:hover {
-					color: #fff;
+					color: #fed43e;
 				}
 
 	#logo {
@@ -2045,13 +2039,15 @@
 		#logo h1 {
 			position: relative;
 			color: #fff;
-			font-weight: 600;
+			font-weight: 400;
 			font-size: 1em;
 			line-height: 1em;
+			text-align: right;
 		}
 
 		#logo p {
 			position: relative;
+			text-align: right;
 			display: block;
 			font-size: 0.6em;
 			color: rgba(255, 255, 255, 0.5);
@@ -2091,7 +2087,7 @@
 				#nav ul li a span:before {
 					position: absolute;
 					left: 0;
-					color: #41484c;
+					color: #666;
 					text-align: center;
 					width: 1.25em;
 					line-height: 1.75em;
@@ -2104,7 +2100,7 @@
 			}
 
 				#nav ul li a.active span:before {
-					color: #e27689;
+					color: #fed43e;
 				}
 
 /* Footer */
@@ -2112,10 +2108,11 @@
 	#footer {
 		margin-left: 375px;
 		text-align: center;
-		background-color: #dce3e2;
+		background: #222729 url("images/overlay.png");
 		padding: 3em 0 4em 0;
 		box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
 		font-size: 0.8em;
+		color: rgba(255, 255, 255, 0.5);
 	}
 
 		#footer .copyright {
@@ -2154,7 +2151,7 @@
 
 			#main > section.dark {
 				color: #ddd;
-				color: rgba(255, 255, 255, 0.75);
+				color: rgba(51, 51, 51, 0.75);
 			}
 
 				#main > section.dark h2, #main > section.dark h3, #main > section.dark h4, #main > section.dark h5, #main > section.dark h6 {
@@ -2162,7 +2159,8 @@
 				}
 
 				#main > section.dark strong {
-					color: #fff;
+					font-weight: 400;
+					color: rgba(51, 51, 51, 0.9);
 					border-color: inherit;
 				}
 
@@ -2183,20 +2181,39 @@
 
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../../images/banner.jpg");
+				background-image: url("../../images/banner.png");
 			}
 
 			#main > section.two {
-				background-color: #f5fafa;
+				background-color: #fed43e;
 			}
 
 			#main > section.three {
-				background-color: #ecf1f1;
+				background-color: #fdfdfd;
 			}
 
 			#main > section.four {
-				background-color: #e8edec;
+				background-color: #fdfdfd;
 			}
+
+			#main > section.three h2 {
+				font-weight: 400;
+				color: rgba(51, 51, 51, 0.9);
+			}
+
+			#main > section.three p {
+				color: rgba(51, 51, 51, 0.75);
+			}
+
+			#main > section.two h2 {
+				font-weight: 400;
+				color: rgba(51, 51, 51, 0.9);
+			}
+
+			#main > section.two p {
+				color: rgba(51, 51, 51, 0.75);
+			}
+
 
 /* Wide */
 
