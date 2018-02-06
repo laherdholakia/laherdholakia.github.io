@@ -1547,7 +1547,7 @@
 	body {
 		background: #fff;
 		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 19pt;
+		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75em;
 		color: #888;
@@ -1566,7 +1566,7 @@
 
 	input, textarea, select {
 		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 19pt;
+		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75em;
 		color: #888;
@@ -2220,6 +2220,7 @@
 			}
 
 			#main > section.three p {
+				font-size: 16pt;
 				color: rgba(51, 51, 51, 0.75);
 			}
 
@@ -2259,7 +2260,7 @@
 		/* Basic */
 
 			body, input, textarea, select {
-				font-size: 17pt;
+				font-size: 16pt;
 			}
 
 		/* Header */
@@ -2613,4 +2614,3 @@
 
 	}
 
-	
