@@ -1,0 +1,246 @@
+[INFO] 2020-01-10 05:14:16.197 [main] c.w.h.d.k.i.AccountSnapshotServiceImpl - Exporting page 1457 with page size 100
+[WARN] 2020-01-10 05:14:16.583 [pool-2-thread-2] c.w.h.i.p.p.LeakDetectingDataSource - Possible connection leak detected! Connection HikariProxyConnection@1394404969 wrapping oracle.jdbc.driver.T4CConnection@1419a6be was not closed within 20 minutes
+
+Borrowed: 2020-01-10T03:54:16.574Z by thread main (id: 1, correlationID: 8e012c5b-ed2c-4e51-9723-2e27d7ed26a4)
+    at com.wirecard.horus.infrastructure.persistence.pool.LeakDetectingDataSource.wrapConnection(LeakDetectingDataSource.java:66)
+    at com.wirecard.horus.infrastructure.persistence.pool.LeakDetectingDataSource.getConnection(LeakDetectingDataSource.java:52)
+    at org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy$LazyConnectionInvocationHandler.getTargetConnection(LazyConnectionDataSourceProxy.java:403)
+    at org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy$LazyConnectionInvocationHandler.invoke(LazyConnectionDataSourceProxy.java:376)
+    at com.sun.proxy.$Proxy69.prepareStatement(Unknown Source)
+    at sun.reflect.GeneratedMethodAccessor44.invoke(Unknown Source)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at net.ttddyy.dsproxy.proxy.ConnectionProxyLogic.performQueryExecutionListener(ConnectionProxyLogic.java:112)
+    at net.ttddyy.dsproxy.proxy.ConnectionProxyLogic.access$000(ConnectionProxyLogic.java:25)
+    at net.ttddyy.dsproxy.proxy.ConnectionProxyLogic$1.execute(ConnectionProxyLogic.java:50)
+    at net.ttddyy.dsproxy.listener.MethodExecutionListenerUtils.invoke(MethodExecutionListenerUtils.java:41)
+    at net.ttddyy.dsproxy.proxy.ConnectionProxyLogic.invoke(ConnectionProxyLogic.java:47)
+    at net.ttddyy.dsproxy.proxy.jdk.ConnectionInvocationHandler.invoke(ConnectionInvocationHandler.java:25)
+    at com.sun.proxy.$Proxy74.prepareStatement(Unknown Source)
+    at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:162)
+    at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:186)
+    at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:160)
+    at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1885)
+    at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+    at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+    at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+    at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+    at org.hibernate.loader.Loader.doList(Loader.java:2554)
+    at org.hibernate.loader.Loader.doList(Loader.java:2540)
+    at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+    at org.hibernate.loader.Loader.list(Loader.java:2365)
+    at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:497)
+    at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:387)
+    at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:236)
+    at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1300)
+    at org.hibernate.internal.QueryImpl.list(QueryImpl.java:103)
+    at org.hibernate.internal.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:966)
+    at com.wirecard.horus.domain.kwg24c.fiducia.dao.HibernateFiduciaExportDao.findLastFiduciaExport(HibernateFiduciaExportDao.java:19)
+    at com.wirecard.horus.domain.kwg24c.fiducia.dao.HibernateFiduciaExportDao$$FastClassBySpringCGLIB$$432853f7.invoke(<generated>)
+    at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+    at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+    at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+    at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656)
+    at com.wirecard.horus.domain.kwg24c.fiducia.dao.HibernateFiduciaExportDao$$EnhancerBySpringCGLIB$$59dcb247.findLastFiduciaExport(<generated>)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.newExportContext(FiduciaServiceImpl.java:116)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:32)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl$$FastClassBySpringCGLIB$$d9d26626.invoke(<generated>)
+    at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+    at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+    at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+    at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl$$EnhancerBySpringCGLIB$$21443e34.export(<generated>)
+    at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.export(FiduciaExportJob.java:37)
+    at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.process(FiduciaExportJob.java:28)
+    at com.wirecard.horus.ui.commandline.common.AbstractHorusBatchCLI.runWithin(AbstractHorusBatchCLI.java:43)
+    at com.wirecard.horus.core.ui.commandline.common.CommandLineRunnerAdapter.run(CommandLineRunnerAdapter.java:31)
+    at com.wirecard.horus.core.ui.commandline.common.Commandline.runCommandLineRunners(Commandline.java:175)
+    at com.wirecard.horus.core.ui.commandline.common.Commandline.doRun(Commandline.java:120)
+    at com.wirecard.horus.core.ui.commandline.common.Commandline.run(Commandline.java:108)
+    at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.main(FiduciaExportJob.java:59)
+
+
+Borrowing thread current state: state=RUNNABLE
+    at java.net.SocketInputStream.socketRead0(Native Method)
+    at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+    at java.net.SocketInputStream.read(SocketInputStream.java:171)
+    at java.net.SocketInputStream.read(SocketInputStream.java:141)
+    at oracle.net.ns.Packet.receive(Packet.java:283)
+    at oracle.net.ns.DataPacket.receive(DataPacket.java:103)
+    at oracle.net.ns.NetInputStream.getNextPacket(NetInputStream.java:230)
+    at oracle.net.ns.NetInputStream.read(NetInputStream.java:175)
+    at oracle.net.ns.NetInputStream.read(NetInputStream.java:100)
+    at oracle.net.ns.NetInputStream.read(NetInputStream.java:85)
+    at oracle.jdbc.driver.T4CSocketInputStreamWrapper.readNextPacket(T4CSocketInputStreamWrapper.java:123)
+    at oracle.jdbc.driver.T4CSocketInputStreamWrapper.read(T4CSocketInputStreamWrapper.java:79)
+    at oracle.jdbc.driver.T4CMAREngine.unmarshalUB1(T4CMAREngine.java:1122)
+    at oracle.jdbc.driver.T4CMAREngine.unmarshalSB1(T4CMAREngine.java:1099)
+    at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:288)
+    at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:191)
+    at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:523)
+    at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+    at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:863)
+    at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1153)
+    at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1275)
+    at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3576)
+    at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3620)
+    at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1491)
+    at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+    at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+    at sun.reflect.GeneratedMethodAccessor78.invoke(Unknown Source)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at net.ttddyy.dsproxy.proxy.StatementProxyLogic.performQueryExecutionListener(StatementProxyLogic.java:310)
+    at net.ttddyy.dsproxy.proxy.StatementProxyLogic.access$700(StatementProxyLogic.java:36)
+    at net.ttddyy.dsproxy.proxy.StatementProxyLogic$1.execute(StatementProxyLogic.java:122)
+    at net.ttddyy.dsproxy.listener.MethodExecutionListenerUtils.invoke(MethodExecutionListenerUtils.java:41)
+    at net.ttddyy.dsproxy.proxy.StatementProxyLogic.invoke(StatementProxyLogic.java:119)
+    at net.ttddyy.dsproxy.proxy.jdk.PreparedStatementInvocationHandler.invoke(PreparedStatementInvocationHandler.java:37)
+    at com.sun.proxy.$Proxy107.executeQuery(Unknown Source)
+    at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+    at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+    at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+    at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+    at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+    at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+    at org.hibernate.loader.Loader.doList(Loader.java:2554)
+    at org.hibernate.loader.Loader.doList(Loader.java:2540)
+    at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+    at org.hibernate.loader.Loader.list(Loader.java:2365)
+    at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+    at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1909)
+    at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+    at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+    at com.wirecard.horus.domain.kwg24c.dao.HibernateAccountSnapshotDao.findPendingAccountSnapshots(HibernateAccountSnapshotDao.java:42)
+    at com.wirecard.horus.domain.kwg24c.dao.HibernateAccountSnapshotDao$$FastClassBySpringCGLIB$$e3b676a8.invoke(<generated>)
+    at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+    at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+    at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+    at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656)
+    at com.wirecard.horus.domain.kwg24c.dao.HibernateAccountSnapshotDao$$EnhancerBySpringCGLIB$$3af5d0fa.findPendingAccountSnapshots(<generated>)
+    at com.wirecard.horus.domain.kwg24c.impl.ExportAccountSnapshotServiceImpl.exportPendingSnapshots(ExportAccountSnapshotServiceImpl.java:31)
+    at com.wirecard.horus.domain.kwg24c.impl.ExportAccountSnapshotServiceImpl$$FastClassBySpringCGLIB$$e4016757.invoke(<generated>)
+    at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+    at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+    at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+    at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656)
+    at com.wirecard.horus.domain.kwg24c.impl.ExportAccountSnapshotServiceImpl$$EnhancerBySpringCGLIB$$f17f0867.exportPendingSnapshots(<generated>)
+    at com.wirecard.horus.domain.kwg24c.impl.AccountSnapshotServiceImpl.exportSnapshots(AccountSnapshotServiceImpl.java:47)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:75)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:45)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:35)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl$$FastClassBySpringCGLIB$$d9d26626.invoke(<generated>)
+    at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+    at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+    at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+    at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+    at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656)
+    at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl$$EnhancerBySpringCGLIB$$21443e34.export(<generated>)
+    at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.export(FiduciaExportJob.java:37)
+    at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.process(FiduciaExportJob.java:28)
+    at com.wirecard.horus.ui.commandline.common.AbstractHorusBatchCLI.runWithin(AbstractHorusBatchCLI.java:43)
+    at com.wirecard.horus.core.ui.commandline.common.CommandLineRunnerAdapter.run(CommandLineRunnerAdapter.java:31)
+    at com.wirecard.horus.core.ui.commandline.common.Commandline.runCommandLineRunners(Commandline.java:175)
+    at com.wirecard.horus.core.ui.commandline.common.Commandline.doRun(Commandline.java:120)
+    at com.wirecard.horus.core.ui.commandline.common.Commandline.run(Commandline.java:108)
+    at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.main(FiduciaExportJob.java:59)
+
+[WARN] 2020-01-10 05:14:16.583 [pool-2-thread-2] c.w.h.i.p.p.LeakDetectingDataSource - Forcefully returning connection to datasource: HikariProxyConnection@1394404969 wrapping oracle.jdbc.driver.T4CConnection@1419a6be
+[WARN] 2020-01-10 05:14:16.835 [main] c.z.h.p.ProxyConnection - horus - Connection oracle.jdbc.driver.T4CConnection@1419a6be marked as broken because of SQLSTATE(08003), ErrorCode(17009)
+java.sql.SQLRecoverableException: Closed Statement: next
+        at oracle.jdbc.driver.OracleResultSetImpl.next(OracleResultSetImpl.java:232) ~[ojdbc6-11.2.0.2.0.jar:11.2.0.2.0]
+        at com.zaxxer.hikari.pool.HikariProxyResultSet.next(HikariProxyResultSet.java) [HikariCP-2.7.8.jar:?]
+        at org.hibernate.loader.Loader.processResultSet(Loader.java:950) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.Loader.doQuery(Loader.java:921) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.Loader.doList(Loader.java:2554) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.Loader.doList(Loader.java:2540) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.Loader.list(Loader.java:2365) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1909) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141) [hibernate-core-4.3.11.Final.jar:4.3.11.Final]
+        at com.wirecard.horus.domain.kwg24c.dao.HibernateAccountSnapshotDao.findPendingAccountSnapshots(HibernateAccountSnapshotDao.java:42) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.dao.HibernateAccountSnapshotDao$$FastClassBySpringCGLIB$$e3b676a8.invoke(<generated>) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) [spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at com.wirecard.horus.domain.kwg24c.dao.HibernateAccountSnapshotDao$$EnhancerBySpringCGLIB$$3af5d0fa.findPendingAccountSnapshots(<generated>) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.impl.ExportAccountSnapshotServiceImpl.exportPendingSnapshots(ExportAccountSnapshotServiceImpl.java:31) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.impl.ExportAccountSnapshotServiceImpl$$FastClassBySpringCGLIB$$e4016757.invoke(<generated>) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) [spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at com.wirecard.horus.domain.kwg24c.impl.ExportAccountSnapshotServiceImpl$$EnhancerBySpringCGLIB$$f17f0867.exportPendingSnapshots(<generated>) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.impl.AccountSnapshotServiceImpl.exportSnapshots(AccountSnapshotServiceImpl.java:47) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:75) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:45) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl.export(FiduciaServiceImpl.java:35) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl$$FastClassBySpringCGLIB$$d9d26626.invoke(<generated>) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) [spring-core-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:721) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) [spring-tx-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:656) [spring-aop-4.3.6.RELEASE.jar:4.3.6.RELEASE]
+        at com.wirecard.horus.domain.kwg24c.fiducia.impl.FiduciaServiceImpl$$EnhancerBySpringCGLIB$$21443e34.export(<generated>) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.export(FiduciaExportJob.java:37) [horus-batch-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.process(FiduciaExportJob.java:28) [horus-batch-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.ui.commandline.common.AbstractHorusBatchCLI.runWithin(AbstractHorusBatchCLI.java:43) [horus-batch-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.core.ui.commandline.common.CommandLineRunnerAdapter.run(CommandLineRunnerAdapter.java:31) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.core.ui.commandline.common.Commandline.runCommandLineRunners(Commandline.java:175) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.core.ui.commandline.common.Commandline.doRun(Commandline.java:120) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.core.ui.commandline.common.Commandline.run(Commandline.java:108) [horus-core-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+        at com.wirecard.horus.ui.commandline.kwg24c.FiduciaExportJob.main(FiduciaExportJob.java:59) [horus-batch-9.24.0.RC3_20191219165951_4cf40a02d34f.jar:?]
+[WARN] 2020-01-10 05:14:18.552 [main] o.h.e.j.s.SqlExceptionHelper - SQL Error: 17009, SQLState: 08003
+[ERROR] 2020-01-10 05:14:18.552 [main] o.h.e.j.s.SqlExceptionHelper - Closed Statement: next
